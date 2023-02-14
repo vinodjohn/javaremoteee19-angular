@@ -1,0 +1,23 @@
+<div id="dogList" *ngIf="dogs.length > 0">
+  <h1>List of dynamic dogs</h1>
+  <ul>
+    <li *ngFor="let dog of dogs">{{ dog.name }}</li>
+  </ul>
+</div>
+
+
+<div id="dogFormDiv" *ngIf="isShowForm">
+  <h3>Add a new dog</h3>
+  <form id="dogForm" #dogForm="ngForm" (ngSubmit)="addDog(dogForm)">
+    <label for="name">Dog name:</label>
+    <input type="text" name="name" id="name" [(ngModel)]="name" />
+    <br/>
+    <label for="type">Type:</label>
+    <input type="text" name="type" id="type" [(ngModel)]="type"/>
+    <br/>
+    <label for="property">Property:</label>
+    <input type="text" name="property" id="property" [(ngModel)]="property"/>
+    <br/>
+    <button type="submit">Add dog</button>
+  </form>
+</div>
