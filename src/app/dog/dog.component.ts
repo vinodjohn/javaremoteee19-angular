@@ -8,10 +8,7 @@ import {MatTable} from "@angular/material/table";
   styleUrls: ['./dog.component.css']
 })
 export class DogComponent implements OnInit{
-  @Input() dogTitle: string = '';
-  @Input() doggies: Dog[] = [];
-
-
+  doggies: Dog[] = [];
   displayedColumns: string[] = ['name', 'type', 'property'];
 
   // @ts-ignore
@@ -29,8 +26,16 @@ export class DogComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
+    this.doggies = this.fetchDoggos();
   }
 
+  fetchDoggos(): Dog[] {
+    let doggos: Dog[] = [];
+
+    doggos.push(new Dog('Jack', 'Dober', 'Runs faster'));
+    doggos.push(new Dog('Julie', 'German Shepperd', 'Eats well'));
+
+    return doggos;
+  }
 
 }

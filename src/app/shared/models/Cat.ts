@@ -1,7 +1,6 @@
 export class Cat {
   name: string;
   type: string;
-
   color: string;
 
 

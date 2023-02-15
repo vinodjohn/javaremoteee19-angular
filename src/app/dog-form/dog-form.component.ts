@@ -13,7 +13,7 @@ export class DogFormComponent {
   name: string = '';
   type: string = '';
   property: string = '';
-  isShowForm: boolean = false;
+  isShowForm: boolean = true;
 
 
   addDog(dogForm: NgForm) {
